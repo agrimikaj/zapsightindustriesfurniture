@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import zapsightLogo from "@/assets/zapsight-logo.png";
 
 const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Use Cases", href: "#use-cases" },
-  { label: "Impact", href: "#impact" },
+  { label: "Platform", href: "#platform" },
   { label: "About", href: "#about" },
 ];
 
@@ -37,22 +38,11 @@ export const Navbar = () => {
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-hero-gradient flex items-center justify-center">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="w-6 h-6"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
-                  fill="hsl(217 91% 60%)"
-                  stroke="hsl(217 91% 60%)"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </div>
+            <img
+              src={zapsightLogo}
+              alt="ZapSight Logo"
+              className="w-10 h-10 object-contain"
+            />
             <span className={`font-display font-bold text-xl transition-colors duration-300 ${
               isScrolled ? "text-foreground" : "text-primary-foreground"
             }`}>
