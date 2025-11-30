@@ -71,7 +71,7 @@ export const UseCaseCards = () => {
     <section
       ref={ref}
       id="use-cases"
-      className="py-24 md:py-32 bg-background relative overflow-hidden"
+      className="py-16 md:py-20 bg-background relative overflow-hidden"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

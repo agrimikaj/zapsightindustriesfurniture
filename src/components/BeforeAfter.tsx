@@ -67,7 +67,7 @@ export const BeforeAfter = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 

@@ -12,7 +12,7 @@ export const CTAFooter = () => {
   return (
     <footer ref={ref} className="relative overflow-hidden">
       {/* Main CTA Section */}
-      <section className="py-24 md:py-32 bg-hero-gradient relative">
+      <section className="py-16 md:py-20 bg-hero-gradient relative">
         {/* Background elements */}
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/20 rounded-full blur-3xl" />
