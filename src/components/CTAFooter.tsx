@@ -47,10 +47,6 @@ export const CTAFooter = () => {
               </Button>
             </a>
 
-            {/* Trust note */}
-            <p className="text-sm text-primary-foreground/50 mt-6">
-              30-minute call • No commitment • Custom insights
-            </p>
           </motion.div>
         </div>
       </section>
