@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
 import heroFloorplan from "@/assets/hero-floorplan.jpg";
 
 export const Hero = () => {
@@ -23,7 +21,7 @@ export const Hero = () => {
       <div className="scan-line" style={{ top: "20%" }} />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
@@ -62,26 +60,6 @@ export const Hero = () => {
             warehouses, and operations. Transform every decision with data.
           </motion.p>
 
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="xl" className="group">
-                Book a Live Demo
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
-            <a href="https://zapsightcomindustriesurniture.lovable.app/#use-cases" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero-outline" size="xl" className="group">
-                <Play className="w-5 h-5" />
-                Explore Use Cases
-              </Button>
-            </a>
-          </motion.div>
         </div>
       </div>
 

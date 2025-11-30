@@ -17,7 +17,7 @@ export const CTAFooter = () => {
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/20 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -53,7 +53,7 @@ export const CTAFooter = () => {
 
       {/* Footer */}
       <section id="about" className="py-12 bg-primary border-t border-primary-foreground/10">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 mb-10">
             {/* Brand & About */}
             <div>

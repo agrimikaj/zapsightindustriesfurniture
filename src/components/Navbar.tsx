@@ -34,7 +34,7 @@ export const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
@@ -69,13 +69,6 @@ export const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              className={isScrolled ? "" : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"}
-            >
-              Log In
-            </Button>
             <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
               <Button variant="nav-cta" size="sm">
                 Book a Demo
@@ -106,7 +99,7 @@ export const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -118,9 +111,6 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="ghost" className="justify-start">
-                  Log In
-                </Button>
                 <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
                   <Button variant="hero" className="w-full">Book a Demo</Button>
                 </a>
