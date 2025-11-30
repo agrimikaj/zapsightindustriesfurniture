@@ -69,14 +69,18 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="hero" size="xl" className="group">
-              Book a Live Demo
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="hero-outline" size="xl" className="group">
-              <Play className="w-5 h-5" />
-              Explore Use Cases
-            </Button>
+            <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="xl" className="group">
+                Book a Live Demo
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="https://zapsightcomindustriesurniture.lovable.app/#use-cases" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero-outline" size="xl" className="group">
+                <Play className="w-5 h-5" />
+                Explore Use Cases
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

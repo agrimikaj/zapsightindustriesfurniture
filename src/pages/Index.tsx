@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { WhyFurniture } from "@/components/WhyFurniture";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
+import { BeforeAfter } from "@/components/BeforeAfter";
 import { UseCaseCards } from "@/components/UseCaseCards";
 import { PlatformShowcase } from "@/components/PlatformShowcase";
 import { CTAFooter } from "@/components/CTAFooter";
@@ -23,6 +24,9 @@ const Index = () => {
       
       {/* Core Features Grid */}
       <FeaturesGrid />
+      
+      {/* Before/After Slider */}
+      <BeforeAfter />
       
       {/* Use Case Cards */}
       <UseCaseCards />

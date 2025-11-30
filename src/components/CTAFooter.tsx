@@ -36,14 +36,16 @@ export const CTAFooter = () => {
             </p>
 
             {/* CTA Button */}
-            <Button
-              variant="hero"
-              size="xl"
-              className="group text-lg px-12 animate-pulse-glow"
-            >
-              Book a Demo
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="hero"
+                size="xl"
+                className="group text-lg px-12 animate-pulse-glow"
+              >
+                Book a Demo
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
 
             {/* Trust note */}
             <p className="text-sm text-primary-foreground/50 mt-6">
