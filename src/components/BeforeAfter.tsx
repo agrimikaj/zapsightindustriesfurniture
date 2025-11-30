@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
+import { Eye, EyeOff, TrendingUp, Users, Package, AlertTriangle } from "lucide-react";
 
 export const BeforeAfter = () => {
   const ref = useRef(null);
@@ -8,20 +9,28 @@ export const BeforeAfter = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
 
+  // Memoize shelf data to prevent re-renders
+  const shelfData = useMemo(() => [
+    { w: "w-16", h: "h-20", color: "bg-stone-600" },
+    { w: "w-20", h: "h-24", color: "bg-stone-500" },
+    { w: "w-14", h: "h-16", color: "bg-stone-700" },
+    { w: "w-18", h: "h-28", color: "bg-stone-600" },
+    { w: "w-24", h: "h-20", color: "bg-stone-500" },
+    { w: "w-16", h: "h-32", color: "bg-stone-600" },
+    { w: "w-20", h: "h-18", color: "bg-stone-700" },
+    { w: "w-14", h: "h-24", color: "bg-stone-500" },
+  ], []);
+
   const handleMove = (clientX: number) => {
     if (!containerRef.current || !isDragging.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
-    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    const percentage = Math.max(5, Math.min(95, (x / rect.width) * 100));
     setSliderPosition(percentage);
   };
 
   const handleMouseDown = () => {
     isDragging.current = true;
-  };
-
-  const handleMouseUp = () => {
-    isDragging.current = false;
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -77,102 +86,213 @@ export const BeforeAfter = () => {
         >
           <div
             ref={containerRef}
-            className="relative aspect-video rounded-2xl overflow-hidden cursor-ew-resize shadow-2xl border border-border/50 select-none"
+            className="relative aspect-[16/9] rounded-2xl overflow-hidden cursor-ew-resize shadow-2xl border border-border/50 select-none"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onTouchStart={handleMouseDown}
             onTouchMove={handleTouchMove}
           >
-            {/* Before Image (Chaotic Store) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/80">
-              {/* Simulated chaotic store view */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-full h-full">
-                  {/* Store shelves - chaotic */}
-                  <div className="absolute inset-8 grid grid-cols-4 gap-4 opacity-60">
-                    {Array.from({ length: 16 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="bg-foreground/10 rounded-lg"
-                        style={{
-                          height: `${40 + Math.random() * 40}%`,
-                          marginTop: `${Math.random() * 30}%`,
-                        }}
-                      />
-                    ))}
-                  </div>
-                  {/* Before label */}
-                  <div className="absolute top-6 left-6 px-4 py-2 bg-destructive/90 text-destructive-foreground rounded-lg font-semibold text-sm">
-                    BEFORE
-                  </div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-foreground/60 text-sm font-medium">
-                      No visibility • Guesswork decisions • Lost opportunities
-                    </p>
-                  </div>
+            {/* BEFORE - Raw Store View */}
+            <div className="absolute inset-0 bg-gradient-to-br from-stone-800 via-stone-900 to-stone-950">
+              {/* Floor grid */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="w-full h-full" style={{
+                  backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                  backgroundSize: '40px 40px'
+                }} />
+              </div>
+              
+              {/* Store layout - furniture items */}
+              <div className="absolute inset-0 p-8">
+                {/* Row 1 */}
+                <div className="flex gap-6 mb-6">
+                  <div className="w-32 h-20 bg-stone-700/60 rounded-lg" />
+                  <div className="w-40 h-24 bg-stone-600/60 rounded-lg" />
+                  <div className="w-28 h-18 bg-stone-700/60 rounded-lg" />
+                  <div className="w-36 h-22 bg-stone-600/60 rounded-lg" />
+                </div>
+                {/* Row 2 */}
+                <div className="flex gap-6 mb-6 ml-12">
+                  <div className="w-44 h-28 bg-stone-600/60 rounded-lg" />
+                  <div className="w-32 h-20 bg-stone-700/60 rounded-lg" />
+                  <div className="w-48 h-24 bg-stone-600/60 rounded-lg" />
+                </div>
+                {/* Row 3 */}
+                <div className="flex gap-6 ml-4">
+                  <div className="w-36 h-24 bg-stone-700/60 rounded-lg" />
+                  <div className="w-40 h-20 bg-stone-600/60 rounded-lg" />
+                  <div className="w-32 h-28 bg-stone-700/60 rounded-lg" />
+                  <div className="w-44 h-22 bg-stone-600/60 rounded-lg" />
+                </div>
+              </div>
+
+              {/* Before Label & Info */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 bg-stone-900/90 border border-stone-700 rounded-lg">
+                <EyeOff className="w-4 h-4 text-stone-400" />
+                <span className="text-sm font-semibold text-stone-300">RAW VIEW</span>
+              </div>
+
+              {/* Problem indicators */}
+              <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-stone-900/80 rounded-lg">
+                  <AlertTriangle className="w-3.5 h-3.5 text-stone-500" />
+                  <span className="text-xs text-stone-400">No footfall data</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-stone-900/80 rounded-lg">
+                  <AlertTriangle className="w-3.5 h-3.5 text-stone-500" />
+                  <span className="text-xs text-stone-400">Unknown hot zones</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-stone-900/80 rounded-lg">
+                  <AlertTriangle className="w-3.5 h-3.5 text-stone-500" />
+                  <span className="text-xs text-stone-400">Blind inventory</span>
                 </div>
               </div>
             </div>
 
-            {/* After Image (AI-Enhanced) */}
+            {/* AFTER - AI Enhanced View */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary"
+              className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              {/* Simulated AI-enhanced view */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-full h-full">
-                  {/* Store shelves - organized with AI overlays */}
-                  <div className="absolute inset-8 grid grid-cols-4 gap-4">
-                    {Array.from({ length: 16 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="bg-accent/30 rounded-lg border border-accent/50 relative overflow-hidden"
-                        style={{ height: "60%" }}
-                      >
-                        {/* AI tag */}
-                        <div className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full animate-pulse" />
-                      </div>
-                    ))}
-                  </div>
-                  {/* Heatmap overlay */}
-                  <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-accent/40 rounded-full blur-xl" />
-                  <div className="absolute bottom-1/4 right-1/3 w-24 h-24 bg-accent/30 rounded-full blur-xl" />
-                  {/* After label */}
-                  <div className="absolute top-6 left-6 px-4 py-2 bg-accent text-accent-foreground rounded-lg font-semibold text-sm">
-                    AFTER
-                  </div>
-                  {/* Stats overlay */}
-                  <div className="absolute top-6 right-6 space-y-2">
-                    <div className="px-3 py-1.5 bg-primary-foreground/20 backdrop-blur-sm rounded-lg text-xs text-primary-foreground font-medium">
-                      📊 12 Hot Zones Detected
-                    </div>
-                    <div className="px-3 py-1.5 bg-primary-foreground/20 backdrop-blur-sm rounded-lg text-xs text-primary-foreground font-medium">
-                      👥 47 Active Visitors
-                    </div>
-                    <div className="px-3 py-1.5 bg-primary-foreground/20 backdrop-blur-sm rounded-lg text-xs text-primary-foreground font-medium">
-                      ⚡ 94% SKU Accuracy
+              {/* Animated grid */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="w-full h-full" style={{
+                  backgroundImage: 'linear-gradient(rgba(255,136,0,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,136,0,0.3) 1px, transparent 1px)',
+                  backgroundSize: '40px 40px'
+                }} />
+              </div>
+
+              {/* Store layout with AI overlays */}
+              <div className="absolute inset-0 p-8">
+                {/* Row 1 with AI tags */}
+                <div className="flex gap-6 mb-6">
+                  <div className="w-32 h-20 bg-accent/20 border-2 border-accent/60 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">12</span>
                     </div>
                   </div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-primary-foreground/90 text-sm font-medium">
-                      Real-time insights • AI-powered decisions • Maximized revenue
-                    </p>
+                  <div className="w-40 h-24 bg-accent/30 border-2 border-accent rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-[10px] font-bold text-primary">28</span>
+                    </div>
                   </div>
+                  <div className="w-28 h-18 bg-accent/15 border-2 border-accent/40 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/70 rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">5</span>
+                    </div>
+                  </div>
+                  <div className="w-36 h-22 bg-accent/25 border-2 border-accent/70 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">19</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Row 2 */}
+                <div className="flex gap-6 mb-6 ml-12">
+                  <div className="w-44 h-28 bg-accent/35 border-2 border-accent rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-[10px] font-bold text-primary">34</span>
+                    </div>
+                  </div>
+                  <div className="w-32 h-20 bg-accent/20 border-2 border-accent/50 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/60 rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">8</span>
+                    </div>
+                  </div>
+                  <div className="w-48 h-24 bg-accent/25 border-2 border-accent/70 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">22</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Row 3 */}
+                <div className="flex gap-6 ml-4">
+                  <div className="w-36 h-24 bg-accent/20 border-2 border-accent/50 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/70 rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">11</span>
+                    </div>
+                  </div>
+                  <div className="w-40 h-20 bg-accent/30 border-2 border-accent rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">26</span>
+                    </div>
+                  </div>
+                  <div className="w-32 h-28 bg-accent/15 border-2 border-accent/40 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent/60 rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">7</span>
+                    </div>
+                  </div>
+                  <div className="w-44 h-22 bg-accent/25 border-2 border-accent/60 rounded-lg relative">
+                    <div className="absolute -top-2 -right-2 w-5 h-5 bg-accent rounded-full flex items-center justify-center">
+                      <span className="text-[10px] font-bold text-primary">18</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Heatmap overlays */}
+              <div className="absolute top-1/4 left-1/3 w-40 h-40 bg-accent/30 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-accent/25 rounded-full blur-2xl" />
+
+              {/* After Label */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 px-4 py-2 bg-accent border border-accent-foreground/20 rounded-lg">
+                <Eye className="w-4 h-4 text-primary" />
+                <span className="text-sm font-semibold text-primary">AI ENHANCED</span>
+              </div>
+
+              {/* Stats Panel */}
+              <div className="absolute top-4 right-4 space-y-2">
+                <div className="flex items-center gap-2 px-3 py-2 bg-primary-foreground/20 backdrop-blur-sm rounded-lg border border-primary-foreground/10">
+                  <Users className="w-4 h-4 text-accent" />
+                  <div>
+                    <p className="text-[10px] text-primary-foreground/60">Active Visitors</p>
+                    <p className="text-sm font-bold text-primary-foreground">47</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-2 bg-primary-foreground/20 backdrop-blur-sm rounded-lg border border-primary-foreground/10">
+                  <TrendingUp className="w-4 h-4 text-accent" />
+                  <div>
+                    <p className="text-[10px] text-primary-foreground/60">Conversion</p>
+                    <p className="text-sm font-bold text-primary-foreground">+12%</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-2 bg-primary-foreground/20 backdrop-blur-sm rounded-lg border border-primary-foreground/10">
+                  <Package className="w-4 h-4 text-accent" />
+                  <div>
+                    <p className="text-[10px] text-primary-foreground/60">SKU Accuracy</p>
+                    <p className="text-sm font-bold text-primary-foreground">94%</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom insights */}
+              <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/90 rounded-lg">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-xs font-medium text-primary">12 Hot Zones</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/90 rounded-lg">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-xs font-medium text-primary">Real-time Tracking</span>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-accent/90 rounded-lg">
+                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                  <span className="text-xs font-medium text-primary">AI Insights</span>
                 </div>
               </div>
             </div>
 
             {/* Slider Handle */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-accent shadow-lg cursor-ew-resize z-20"
+              className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_20px_rgba(255,255,255,0.5)] z-20"
               style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
             >
               {/* Handle knob */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-xl border-4 border-primary-foreground/20">
-                <div className="flex gap-0.5">
-                  <div className="w-0.5 h-4 bg-accent-foreground rounded-full" />
-                  <div className="w-0.5 h-4 bg-accent-foreground rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-accent">
+                <div className="flex gap-1">
+                  <div className="w-0.5 h-5 bg-accent rounded-full" />
+                  <div className="w-0.5 h-5 bg-accent rounded-full" />
+                  <div className="w-0.5 h-5 bg-accent rounded-full" />
                 </div>
               </div>
             </div>
