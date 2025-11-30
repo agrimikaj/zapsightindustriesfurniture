@@ -76,9 +76,11 @@ export const Navbar = () => {
             >
               Log In
             </Button>
-            <Button variant="nav-cta" size="sm">
-              Book a Demo
-            </Button>
+            <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
+              <Button variant="nav-cta" size="sm">
+                Book a Demo
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -119,7 +121,9 @@ export const Navbar = () => {
                 <Button variant="ghost" className="justify-start">
                   Log In
                 </Button>
-                <Button variant="hero">Book a Demo</Button>
+                <a href="https://zapsight.com/contact" target="_blank" rel="noopener noreferrer">
+                  <Button variant="hero" className="w-full">Book a Demo</Button>
+                </a>
               </div>
             </div>
           </motion.div>
