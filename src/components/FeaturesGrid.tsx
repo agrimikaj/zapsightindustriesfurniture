@@ -68,7 +68,7 @@ export const FeaturesGrid = () => {
       {/* Background pattern */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
