@@ -48,7 +48,7 @@ export const Hero = () => {
             AI that sees your store{" "}
             <span className="text-gradient">like you do</span>
             <br />
-            <span className="text-primary-foreground/90">— but with superpowers.</span>
+            <span className="text-primary-foreground/90">but with superpowers.</span>
           </motion.h1>
 
           {/* Subheadline */}
