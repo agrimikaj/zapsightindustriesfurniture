@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Store,
   Users,
   Truck,
   PackageCheck,
@@ -12,13 +11,6 @@ import {
 } from "lucide-react";
 
 const useCases = [
-  {
-    icon: Store,
-    title: "Retail Store Monitoring",
-    description:
-      "Real-time visibility into customer behavior, product interactions, and staff performance across your showroom floor.",
-    benefits: ["Footfall analytics", "Zone performance", "Peak hour insights"],
-  },
   {
     icon: Users,
     title: "RSA Performance Management",
