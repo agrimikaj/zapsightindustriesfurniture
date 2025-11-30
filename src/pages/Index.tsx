@@ -2,10 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { WhyFurniture } from "@/components/WhyFurniture";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
-import { BeforeAfter } from "@/components/BeforeAfter";
-import { RealImpact } from "@/components/RealImpact";
-import { UseCaseCarousel } from "@/components/UseCaseCarousel";
-import { CustomerQuotes } from "@/components/CustomerQuotes";
+import { UseCaseCards } from "@/components/UseCaseCards";
+import { PlatformShowcase } from "@/components/PlatformShowcase";
 import { CTAFooter } from "@/components/CTAFooter";
 
 const Index = () => {
@@ -26,19 +24,13 @@ const Index = () => {
       {/* Core Features Grid */}
       <FeaturesGrid />
       
-      {/* Before/After Transformation */}
-      <BeforeAfter />
+      {/* Use Case Cards */}
+      <UseCaseCards />
       
-      {/* Real Impact Stats */}
-      <RealImpact />
+      {/* Platform Showcase with Stats & Dashboard Screenshots */}
+      <PlatformShowcase />
       
-      {/* Use Case Carousel */}
-      <UseCaseCarousel />
-      
-      {/* Customer Testimonials */}
-      <CustomerQuotes />
-      
-      {/* CTA and Footer */}
+      {/* CTA and Footer with About */}
       <CTAFooter />
     </main>
   );

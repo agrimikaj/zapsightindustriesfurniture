@@ -10,7 +10,7 @@ const challenges = [
     after: "Clean visibility",
     description:
       "Transform scattered SKU data into crystal-clear inventory intelligence across every location.",
-    texture: "linear-gradient(135deg, hsl(30 30% 95%) 0%, hsl(30 20% 90%) 100%)", // Wood-inspired
+    texture: "linear-gradient(135deg, hsl(30 30% 95%) 0%, hsl(30 20% 90%) 100%)",
   },
   {
     icon: Zap,
@@ -18,7 +18,7 @@ const challenges = [
     after: "Instant AI alerts",
     description:
       "Replace reactive management with proactive insights that reach you before problems escalate.",
-    texture: "linear-gradient(135deg, hsl(220 20% 95%) 0%, hsl(220 15% 90%) 100%)", // Metal-inspired
+    texture: "linear-gradient(135deg, hsl(25 25% 95%) 0%, hsl(25 20% 90%) 100%)",
   },
   {
     icon: TrendingUp,
@@ -26,7 +26,7 @@ const challenges = [
     after: "Data-backed actions",
     description:
       "Convert missed opportunities into revenue with AI that understands your customer journey.",
-    texture: "linear-gradient(135deg, hsl(200 15% 96%) 0%, hsl(200 10% 92%) 100%)", // Fabric-inspired
+    texture: "linear-gradient(135deg, hsl(20 20% 96%) 0%, hsl(20 15% 92%) 100%)",
   },
 ];
 
@@ -36,7 +36,7 @@ export const WhyFurniture = () => {
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-background relative overflow-hidden">
-      {/* Subtle furniture silhouette divider at top */}
+      {/* Subtle divider at top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       
       <div className="container mx-auto px-6">
@@ -52,7 +52,7 @@ export const WhyFurniture = () => {
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Why Furniture Needs{" "}
-            <span className="text-gradient-navy">ZapSight</span>
+            <span className="text-gradient-dark">ZapSight</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             The furniture industry operates on thin margins and complex
@@ -72,8 +72,8 @@ export const WhyFurniture = () => {
               style={{ background: challenge.texture }}
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors duration-300">
-                <challenge.icon className="w-7 h-7 text-primary group-hover:text-accent transition-colors duration-300" />
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
+                <challenge.icon className="w-7 h-7 text-accent" />
               </div>
 
               {/* Transformation */}
@@ -104,7 +104,7 @@ export const WhyFurniture = () => {
                 {challenge.description}
               </p>
 
-              {/* Decorative furniture joint pattern */}
+              {/* Decorative pattern */}
               <div className="absolute bottom-4 right-4 opacity-5 group-hover:opacity-10 transition-opacity">
                 <svg
                   width="60"

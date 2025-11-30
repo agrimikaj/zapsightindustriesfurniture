@@ -3,13 +3,14 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import zapsightLogo from "@/assets/zapsight-logo.png";
 
 export const CTAFooter = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <footer ref={ref} id="about" className="relative overflow-hidden">
+    <footer ref={ref} className="relative overflow-hidden">
       {/* Main CTA Section */}
       <section className="py-24 md:py-32 bg-hero-gradient relative">
         {/* Background elements */}
@@ -52,47 +53,63 @@ export const CTAFooter = () => {
         </div>
       </section>
 
-      {/* Footer Links */}
-      <section className="py-12 bg-primary border-t border-primary-foreground/10">
+      {/* Footer */}
+      <section id="about" className="py-12 bg-primary border-t border-primary-foreground/10">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            {/* Brand */}
+          <div className="grid md:grid-cols-2 gap-12 mb-10">
+            {/* Brand & About */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="w-6 h-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
-                      fill="hsl(217 91% 60%)"
-                      stroke="hsl(217 91% 60%)"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={zapsightLogo}
+                  alt="ZapSight Logo"
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="font-display font-bold text-xl text-primary-foreground">
                   ZapSight
                 </span>
               </div>
-              <p className="text-sm text-primary-foreground/60 leading-relaxed">
-                AI-powered retail intelligence platform designed specifically
-                for the furniture industry.
+              <p className="text-sm text-primary-foreground/60 leading-relaxed max-w-md mb-4">
+                ZapSight is an AI-powered retail intelligence platform designed specifically
+                for the furniture industry. We help retailers transform their operations
+                with real-time insights, predictive analytics, and actionable intelligence
+                across showrooms, warehouses, and supply chains.
+              </p>
+              <p className="text-sm text-primary-foreground/50">
+                Empowering furniture retailers to make smarter decisions, faster.
               </p>
             </div>
 
-            {/* Product */}
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">
-                Product
-              </h4>
-              <ul className="space-y-2">
-                {["Features", "Use Cases", "Pricing", "Integrations"].map(
-                  (item) => (
+            {/* Quick Links */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Product */}
+              <div>
+                <h4 className="font-semibold text-primary-foreground mb-4">
+                  Product
+                </h4>
+                <ul className="space-y-2">
+                  {["Features", "Use Cases", "Pricing", "Integrations"].map(
+                    (item) => (
+                      <li key={item}>
+                        <a
+                          href="#"
+                          className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+
+              {/* Company */}
+              <div>
+                <h4 className="font-semibold text-primary-foreground mb-4">
+                  Company
+                </h4>
+                <ul className="space-y-2">
+                  {["About", "Careers", "Blog", "Contact"].map((item) => (
                     <li key={item}>
                       <a
                         href="#"
@@ -101,47 +118,9 @@ export const CTAFooter = () => {
                         {item}
                       </a>
                     </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">
-                Company
-              </h4>
-              <ul className="space-y-2">
-                {["About", "Careers", "Blog", "Contact"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h4 className="font-semibold text-primary-foreground mb-4">
-                Resources
-              </h4>
-              <ul className="space-y-2">
-                {["Documentation", "API", "Support", "Security"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 

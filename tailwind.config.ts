@@ -61,16 +61,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // ZapSight custom colors
-        navy: {
-          DEFAULT: "hsl(var(--navy))",
-          light: "hsl(var(--navy-light))",
+        // ZapSight custom colors - Orange theme
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          light: "hsl(var(--orange-light))",
+          dark: "hsl(var(--orange-dark))",
         },
-        electric: {
-          DEFAULT: "hsl(var(--electric-blue))",
-          glow: "hsl(var(--electric-blue-glow))",
-        },
-        ice: "hsl(var(--ice))",
+        charcoal: "hsl(var(--charcoal))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -109,8 +106,8 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(217 91% 60% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(217 91% 60% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(24 95% 53% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(24 95% 53% / 0.5)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -130,14 +127,15 @@ export default {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "hero-gradient": "linear-gradient(135deg, hsl(252 88% 10%) 0%, hsl(252 60% 18%) 100%)",
-        "accent-gradient": "linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 45%) 100%)",
-        "card-gradient": "linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 30% 98%) 100%)",
+        "hero-gradient": "linear-gradient(135deg, hsl(20 20% 10%) 0%, hsl(20 15% 18%) 100%)",
+        "accent-gradient": "linear-gradient(135deg, hsl(28 100% 55%) 0%, hsl(16 90% 50%) 100%)",
+        "orange-gradient": "linear-gradient(135deg, hsl(28 100% 60%) 0%, hsl(12 85% 50%) 100%)",
+        "card-gradient": "linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(30 20% 98%) 100%)",
       },
       boxShadow: {
-        glow: "0 0 40px hsl(217 91% 60% / 0.3)",
-        "glow-sm": "0 0 20px hsl(217 91% 60% / 0.2)",
-        "glow-lg": "0 0 60px hsl(217 91% 60% / 0.4)",
+        glow: "0 0 40px hsl(24 95% 53% / 0.3)",
+        "glow-sm": "0 0 20px hsl(24 95% 53% / 0.2)",
+        "glow-lg": "0 0 60px hsl(24 95% 53% / 0.4)",
       },
     },
   },

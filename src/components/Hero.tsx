@@ -78,28 +78,6 @@ export const Hero = () => {
               Explore Use Cases
             </Button>
           </motion.div>
-
-          {/* Trust indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16 pt-8 border-t border-primary-foreground/10"
-          >
-            <p className="text-sm text-primary-foreground/50 mb-4">
-              Trusted by leading furniture retailers
-            </p>
-            <div className="flex items-center justify-center gap-8 opacity-60">
-              {["HomeCraft", "FurniMax", "WoodWorks", "DesignHub"].map((brand) => (
-                <span
-                  key={brand}
-                  className="text-lg font-display font-semibold text-primary-foreground/40"
-                >
-                  {brand}
-                </span>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
 

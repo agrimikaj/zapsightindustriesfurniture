@@ -96,11 +96,11 @@ export const FeaturesGrid = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="feature-card bg-card"
+              className="feature-card bg-card group"
             >
               {/* Header with icon and highlight */}
               <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <feature.icon className="w-6 h-6 text-accent" />
                 </div>
                 <span className="text-xs font-semibold text-accent bg-accent/10 px-3 py-1 rounded-full">
