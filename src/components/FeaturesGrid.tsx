@@ -63,7 +63,7 @@ export const FeaturesGrid = () => {
     <section
       ref={ref}
       id="features"
-      className="py-24 md:py-32 bg-secondary/30 relative"
+      className="py-16 md:py-20 bg-secondary/30 relative"
     >
       {/* Background pattern */}
       <div className="absolute inset-0 grid-pattern opacity-50" />

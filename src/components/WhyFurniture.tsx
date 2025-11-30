@@ -35,7 +35,7 @@ export const WhyFurniture = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Subtle divider at top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       
