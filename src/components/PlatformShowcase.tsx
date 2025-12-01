@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { TrendingUp, TrendingDown, Target, Clock } from "lucide-react";
 import demoVideo from "@/assets/RSA_Demo_1.mp4";
+import alertVideo from "@/assets/Alert_Demo_1_1.mp4";
 
 const stats = [
   {
@@ -90,28 +91,52 @@ export const PlatformShowcase = () => {
           ))}
         </motion.div>
 
-        {/* Interactive Video Demo */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative group max-w-5xl mx-auto"
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-accent/30 via-orange-light/30 to-accent/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
-          <div className="relative rounded-2xl overflow-hidden border border-primary-foreground/10 bg-card shadow-2xl">
-            <video
-              controls
-              className="w-full h-auto"
-              poster={demoVideo}
-            >
-              <source src={demoVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <p className="text-center text-sm text-primary-foreground/50 mt-4">
-            Interactive Platform Demo
-          </p>
-        </motion.div>
+        {/* Interactive Video Demos */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* RSA Demo Video */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-accent/30 to-orange-light/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+            <div className="relative rounded-2xl overflow-hidden border border-primary-foreground/10 bg-card shadow-2xl">
+              <video
+                controls
+                className="w-full h-auto"
+              >
+                <source src={demoVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p className="text-center text-sm text-primary-foreground/50 mt-4">
+              RSA Productivity Dashboard
+            </p>
+          </motion.div>
+
+          {/* Alert Demo Video */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-orange-light/30 to-accent/30 rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity" />
+            <div className="relative rounded-2xl overflow-hidden border border-primary-foreground/10 bg-card shadow-2xl">
+              <video
+                controls
+                className="w-full h-auto"
+              >
+                <source src={alertVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p className="text-center text-sm text-primary-foreground/50 mt-4">
+              Real-Time Alert System
+            </p>
+          </motion.div>
+        </div>
 
         {/* Live indicator */}
         <motion.div
