@@ -38,7 +38,7 @@ export const PlatformShowcase = () => {
   return (
     <section
       ref={ref}
-      id="platform"
+      id="platform-showcase"
       className="py-16 md:py-20 bg-hero-gradient relative overflow-hidden"
     >
       {/* Background elements */}
