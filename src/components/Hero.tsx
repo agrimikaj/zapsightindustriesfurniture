@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import heroFloorplan from "@/assets/hero-floorplan.jpg";
 
 export const Hero = () => {
@@ -59,6 +60,19 @@ export const Hero = () => {
             Real-time insights for the Furniture Industry across retail floors,
             warehouses, and operations. Transform every decision with data.
           </motion.p>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <a href="#platform-showcase">
+              <Button variant="hero" size="lg">
+                Watch the Demo
+              </Button>
+            </a>
+          </motion.div>
 
         </div>
       </div>
