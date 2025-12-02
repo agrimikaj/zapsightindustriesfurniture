@@ -57,7 +57,7 @@ export const CTAFooter = () => {
           <div className="grid md:grid-cols-2 gap-12 mb-10">
             {/* Brand & About */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <a href="https://zapsight.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 mb-4 hover:opacity-80 transition-opacity">
                 <img
                   src={zapsightLogo}
                   alt="ZapSight Logo"
@@ -66,7 +66,7 @@ export const CTAFooter = () => {
                 <span className="font-display font-bold text-xl text-primary-foreground">
                   ZapSight
                 </span>
-              </div>
+              </a>
               <p className="text-sm text-primary-foreground/60 leading-relaxed max-w-md mb-4">
                 ZapSight is an AI-powered retail intelligence platform designed specifically
                 for the furniture industry. We help retailers transform their operations
