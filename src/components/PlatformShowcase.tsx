@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { TrendingUp, TrendingDown, Target, Clock } from "lucide-react";
-import demoVideo from "@/assets/RSA_Demo_1.mp4";
+import demoVideo from "@/assets/impact-demo.mov";
 
 const stats = [
   {
