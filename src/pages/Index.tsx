@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { WhyFurniture } from "@/components/WhyFurniture";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
@@ -13,8 +12,6 @@ const Index = () => {
       {/* Noise texture overlay */}
       <div className="noise-overlay" />
       
-      {/* Navigation */}
-      <Navbar />
       
       {/* Hero Section */}
       <Hero />
