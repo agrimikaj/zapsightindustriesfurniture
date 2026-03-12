@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { WhyFurniture } from "@/components/WhyFurniture";
+import { ShopAssistBanner } from "@/components/ShopAssistBanner";
 import { FeaturesGrid } from "@/components/FeaturesGrid";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { UseCaseCards } from "@/components/UseCaseCards";
