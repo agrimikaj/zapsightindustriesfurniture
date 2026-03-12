@@ -21,6 +21,9 @@ const Index = () => {
       {/* Why Furniture Needs ZapSight */}
       <WhyFurniture />
       
+      {/* Shop Assist Banner */}
+      <ShopAssistBanner />
+      
       {/* Core Features Grid */}
       <FeaturesGrid />
       
