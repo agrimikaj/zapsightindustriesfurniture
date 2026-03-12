@@ -32,6 +32,9 @@ const Index = () => {
       {/* Platform Showcase with Stats & Dashboard Screenshots */}
       <PlatformShowcase />
       
+      {/* Testimonials */}
+      <Testimonials />
+      
       {/* CTA and Footer with About */}
       <CTAFooter />
     </main>
