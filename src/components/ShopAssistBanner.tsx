@@ -34,7 +34,7 @@ export const ShopAssistBanner = () => {
           rel="noopener noreferrer"
         >
           <Button className="bg-accent hover:bg-orange-dark text-accent-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 group">
-            Learn More
+            Explore Shop Assist by ZapSight
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </a>
