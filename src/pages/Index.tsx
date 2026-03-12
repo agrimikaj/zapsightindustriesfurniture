@@ -5,6 +5,7 @@ import { BeforeAfter } from "@/components/BeforeAfter";
 import { UseCaseCards } from "@/components/UseCaseCards";
 import { PlatformShowcase } from "@/components/PlatformShowcase";
 import { CTAFooter } from "@/components/CTAFooter";
+import { Testimonials } from "@/components/Testimonials";
 
 const Index = () => {
   return (
@@ -30,6 +31,9 @@ const Index = () => {
       
       {/* Platform Showcase with Stats & Dashboard Screenshots */}
       <PlatformShowcase />
+      
+      {/* Testimonials */}
+      <Testimonials />
       
       {/* CTA and Footer with About */}
       <CTAFooter />
